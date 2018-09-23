@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - NoTeleport
+  - Cubes
+  - Spheres
+  - Leg
+  - Arm
+  - Saucers
+  - Torso
+  - OtherSaucers
+  - intake
+  - valve_cover
   layers:
   - Default
   - TransparentFX
