@@ -14,6 +14,10 @@ TagManager:
   - OtherSaucers
   - intake
   - valve_cover
+  - FxTemporaire
+  - projectile
+  - Ball
+  - Cylinder
   layers:
   - Default
   - TransparentFX
