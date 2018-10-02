@@ -2746,8 +2746,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabbedAudioClip: {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba, type: 3}
-  ungrabbedAudioClip: {fileID: 8300000, guid: 4bb527c4eb5b08c44b8d24a14a6ab3ce, type: 3}
+  touchedClip: {fileID: 8300000, guid: 554ae4ff7aa47c0478d95d78e6a9be6b, type: 3}
+  untouchedClip: {fileID: 8300000, guid: dde0cb3ddafcf014a8c42e805de893e8, type: 3}
+  grabbedClip: {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277, type: 3}
+  usedClip: {fileID: 8300000, guid: 5dea26c1298d78149af149b8bd73ff63, type: 3}
+  unusedClip: {fileID: 8300000, guid: f9d368eac27f70740bed52d36e0070d8, type: 3}
+  enteredSnapDropZoneClip: {fileID: 8300000, guid: 74068c08db651d34f81de9affa61f55d,
+    type: 3}
+  exitedSnapDropZoneClip: {fileID: 8300000, guid: 0e220b97baa73db4fab6fba879e1b024,
+    type: 3}
+  snappedToDropZoneClip: {fileID: 8300000, guid: 4bb527c4eb5b08c44b8d24a14a6ab3ce,
+    type: 3}
+  unsnappedFromDropZoneClip: {fileID: 8300000, guid: 716aaae09f0c5774a972f0bacd5e5e22,
+    type: 3}
   debugging: 0
 --- !u!82 &1422085230
 AudioSource:
