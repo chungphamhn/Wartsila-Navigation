@@ -37,32 +37,32 @@ public class PointerAudio : MonoBehaviour
         }
     }
 
-    private void OnIAOActivateButtonPressed (object sender, InteractableObjectEventArgs e)
+    private void OnIAOActivationButtonPressed (object sender, ControllerInteractionEventArgs e)
     {
-        Play(activateButtonPressedClip);
+        Play(activationButtonPressedClip);
     }
 
-    private void OnIAOActivateButtonReleased (object sender, InteractableObjectEventArgs e)
+    private void OnIAOActivationButtonReleased (object sender, ControllerInteractionEventArgs e)
     {
-        Play(activateButtonReleasedClip);
+        Play(activationButtonReleasedClip);
     }
 
-    private void OnIAOSelectionButtonPressed (object sender, InteractableObjectEventArgs e)
+    private void OnIAOSelectionButtonPressed (object sender, ControllerInteractionEventArgs e)
     {
         Play(selectionButtonPressedClip);
     }
 
-    private void OnIAOSelectionButtonReleased (object sender, InteractableObjectEventArgs e)
+    private void OnIAOSelectionButtonReleased (object sender, ControllerInteractionEventArgs e)
     {
         Play(selectionButtonReleasedClip);
     }
 
-    private void OnIAOPointerStateValid (object sender, InteractableObjectEventArgs e)
+    private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)
     {
         Play(pointerStateValidClip);
     }
 
-    private void OnIAOPointerStateInvalid (object sender, InteractableObjectEventArgs e)
+    private void OnIAOPointerStateInvalid (object sender, DestinationMarkerEventArgs e)
     {
         Play(pointerStateInvalidClip);
     }
