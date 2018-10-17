@@ -17,6 +17,10 @@ public class InteractableAudioObject : MonoBehaviour
     [SerializeField] private AudioClip snappedToDropZoneClip;
     [SerializeField] private AudioClip unsnappedFromDropZoneClip;
     private AudioSource audioSource;
+    private AudioSource turningAudioSource;
+    private Quaternion previousRotation;
+    [SerializeField] private AudioClip turningClip; // should be a loop
+    [SerializeField] private bool turnable = false;
     [SerializeField] private bool debugging = false;
 
     private void OnEnable()
@@ -95,5 +99,50 @@ public class InteractableAudioObject : MonoBehaviour
     private void OnIAOUnsnappedFromDropZone (object sender, InteractableObjectEventArgs e)
     {
         Play(unsnappedFromDropZoneClip);
+    }
+
+    private void Start()
+    {
+        if (turnable)
+        {
+            // another audio source for looping turning audio for valves
+            turningAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+            System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
+            foreach (System.Reflection.FieldInfo field in fields)
+            {
+                field.SetValue(turningAudioSource, field.GetValue(audioSource));
+            }
+            turningAudioSource.clip = turningClip;
+            turningAudioSource.volume = 0f;
+            turningAudioSource.loop = true;
+            turningAudioSource.Play();
+
+            // for keeping track of rotation changes
+            previousRotation = transform.rotation;
+        }
+    }
+
+    private void Update()
+    {
+        // fade in turning clip if object (e.g. valve handle) is being turned
+        if (turnable)
+        {
+            Quaternion currentRotation = transform.rotation;
+            if (Quaternion.Angle(previousRotation, currentRotation) > 0.01)
+            {
+                previousRotation = currentRotation;
+                if (turningAudioSource.volume < 1f)
+                {
+                    turningAudioSource.volume += Time.deltaTime;
+                }
+            }
+            else
+            {
+                if (turningAudioSource.volume > 0f)
+                {
+                    turningAudioSource.volume -= Time.deltaTime;
+                }
+            }
+        }           
     }
 }

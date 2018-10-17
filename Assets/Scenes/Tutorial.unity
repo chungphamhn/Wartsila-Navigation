@@ -1978,6 +1978,8 @@ MonoBehaviour:
     type: 3}
   unsnappedFromDropZoneClip: {fileID: 8300000, guid: 37b6eb5cae1aaba4086f32bccf0cb47f,
     type: 3}
+  turningClip: {fileID: 8300000, guid: a53c98af8c8e149238e998d633098eda, type: 3}
+  turnable: 1
   debugging: 0
 --- !u!114 &1436996177
 MonoBehaviour:
@@ -2776,6 +2778,8 @@ MonoBehaviour:
     type: 3}
   unsnappedFromDropZoneClip: {fileID: 8300000, guid: 07052560d042e0e4ba61076ebb2e1b94,
     type: 3}
+  turningClip: {fileID: 0}
+  turnable: 0
   debugging: 0
 --- !u!114 &1628081621
 MonoBehaviour:
