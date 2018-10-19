@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using VRTK;
 
-public class TutorialGrab : MonoBehaviour {
+public class TutorialTestGrab : MonoBehaviour {
     private VRTK_InteractableObject interactableObject;
     private VRTK_ControllerReference controllerReference;
     [SerializeField] private GameObject door;

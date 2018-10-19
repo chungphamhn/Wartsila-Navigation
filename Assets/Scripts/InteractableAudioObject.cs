@@ -45,6 +45,7 @@ public class InteractableAudioObject : MonoBehaviour
         if (audioSource != null)
         {
             audioSource.clip = clip;
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
             audioSource.Play();
         }
     }
