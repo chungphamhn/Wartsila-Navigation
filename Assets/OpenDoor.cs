@@ -9,25 +9,27 @@ public class OpenDoor : MonoBehaviour {
     public float rotation;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         door = GetComponent<Rigidbody>();
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
+                
+    }
+        
+    // Update is called once per frame
+    void Update () {
+        
         Debug.Log(valve.transform.localRotation.eulerAngles.x >= 100);
 
         if(valve.transform.localRotation.eulerAngles.x >= 100)
         {
-
+            
             //can open door
             door.isKinematic = false;
-            
-        }
-		
-	}
+
+            // lock valve and prevent further valve rotation audio
+            valve.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+            valve.GetComponent<InteractableAudioObject>().SetTurningAudioActive(false);            
+        }                
+    }
 }
