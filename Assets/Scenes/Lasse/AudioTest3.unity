@@ -4933,21 +4933,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602345925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e1bebfbda804a79a4252d218cffa84, type: 3}
+  m_Script: {fileID: 11500000, guid: d6be52a84ce0d426a8cff7c10f866724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationButtonPressedClip: {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba,
+  teleportPointerStartClip: {fileID: 8300000, guid: 7113854dded09be418cf3be1158d444c,
     type: 3}
-  activationButtonReleasedClip: {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277,
+  teleportPointerLoopClip: {fileID: 8300000, guid: 47b5e90896f0e004c85bebd26e6057e2,
     type: 3}
-  selectionButtonPressedClip: {fileID: 8300000, guid: efee776e88902a74684c56ce2962678f,
+  teleportGoClip: {fileID: 8300000, guid: e9befd794befe7540ad040be41dba757, type: 3}
+  teleportGoodAreaClip: {fileID: 8300000, guid: 4e2e74504a83fbd438147cfda37cf3d0,
     type: 3}
-  selectionButtonReleasedClip: {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681,
-    type: 3}
-  pointerStateValidClip: {fileID: 8300000, guid: 526033aedfcd8fa4893bd857ca331979,
-    type: 3}
-  pointerStateInvalidClip: {fileID: 8300000, guid: e3148a98a2496e64cb8712177bbcde71,
-    type: 3}
+  teleportBadAreaClip: {fileID: 8300000, guid: aa9e211c83b607f479bd7772eb56a98c, type: 3}
   debugging: 0
 --- !u!1 &1613004710
 GameObject:
