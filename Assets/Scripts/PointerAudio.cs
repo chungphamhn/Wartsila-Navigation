@@ -8,8 +8,6 @@ public class PointerAudio : MonoBehaviour
     private VRTK_ControllerReference controllerReference;
     [SerializeField] private AudioClip activationButtonPressedClip;
     [SerializeField] private AudioClip activationButtonReleasedClip;
-    [SerializeField] private AudioClip selectionButtonPressedClip;
-    [SerializeField] private AudioClip selectionButtonReleasedClip;
     [SerializeField] private AudioClip pointerStateValidClip;
     [SerializeField] private AudioClip pointerStateInvalidClip;
     private AudioSource audioSource;
@@ -22,8 +20,6 @@ public class PointerAudio : MonoBehaviour
         pointer = GetComponent<VRTK_Pointer>();
         pointer.ActivationButtonPressed += OnIAOActivationButtonPressed;
         pointer.ActivationButtonReleased += OnIAOActivationButtonReleased;
-        pointer.SelectionButtonPressed += OnIAOSelectionButtonPressed;
-        pointer.SelectionButtonReleased += OnIAOSelectionButtonReleased;
         pointer.PointerStateValid += OnIAOPointerStateValid;
         pointer.PointerStateInvalid += OnIAOPointerStateInvalid;
     }
@@ -46,16 +42,6 @@ public class PointerAudio : MonoBehaviour
     private void OnIAOActivationButtonReleased (object sender, ControllerInteractionEventArgs e)
     {
         Play(activationButtonReleasedClip);
-    }
-
-    private void OnIAOSelectionButtonPressed (object sender, ControllerInteractionEventArgs e)
-    {
-        Play(selectionButtonPressedClip);
-    }
-
-    private void OnIAOSelectionButtonReleased (object sender, ControllerInteractionEventArgs e)
-    {
-        Play(selectionButtonReleasedClip);
     }
 
     private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)

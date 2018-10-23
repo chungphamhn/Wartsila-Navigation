@@ -8,6 +8,7 @@ public class TeleportPointerAudio : MonoBehaviour
     private VRTK_ControllerReference controllerReference;
     [SerializeField] private AudioClip teleportPointerStartClip;
     [SerializeField] private AudioClip teleportPointerLoopClip;
+    [SerializeField] private AudioClip teleportCancelClip;
     [SerializeField] private AudioClip teleportGoClip;
     [SerializeField] private AudioClip teleportGoodAreaClip;
     [SerializeField] private AudioClip teleportBadAreaClip;
@@ -48,6 +49,8 @@ public class TeleportPointerAudio : MonoBehaviour
         loopingAudioSource.Stop();
         if (validTarget)
             Play(teleportGoClip);
+        else
+            Play(teleportCancelClip);
     }
 
     private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)
@@ -64,13 +67,13 @@ public class TeleportPointerAudio : MonoBehaviour
     
     private void Start()
     {
-	loopingAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
-	System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
-	foreach (System.Reflection.FieldInfo field in fields)
-	{
-	    field.SetValue(loopingAudioSource, field.GetValue(audioSource));
-	}
-	loopingAudioSource.clip = teleportPointerLoopClip;
-	loopingAudioSource.loop = true;
+        loopingAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
+        foreach (System.Reflection.FieldInfo field in fields)
+        {
+            field.SetValue(loopingAudioSource, field.GetValue(audioSource));
+        }
+        loopingAudioSource.clip = teleportPointerLoopClip;
+        loopingAudioSource.loop = true;
     }
 }
