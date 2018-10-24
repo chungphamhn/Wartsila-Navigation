@@ -40,6 +40,16 @@ public class InteractableAudioObject : MonoBehaviour
         interactableObject.InteractableObjectUnsnappedFromDropZone += OnIAOUnsnappedFromDropZone;
     }
 
+    public void SetTurningAudioActive(bool active = true)
+    {
+        turnable = active; 
+        if (!turnable)
+        {
+            turningAudioSource.Stop();
+            turningAudioSource.volume = 0f;
+        }
+    }
+    
     private void Play(AudioClip clip)
     {
         if (audioSource != null)
@@ -129,19 +139,20 @@ public class InteractableAudioObject : MonoBehaviour
         if (turnable)
         {
             Quaternion currentRotation = transform.rotation;
-            if (Quaternion.Angle(previousRotation, currentRotation) > 0.01)
+            float rotationDelta = Quaternion.Angle(previousRotation, currentRotation);
+            if (rotationDelta > 0.01f)
             {
                 previousRotation = currentRotation;
                 if (turningAudioSource.volume < 1f)
                 {
-                    turningAudioSource.volume += Time.deltaTime;
+                    turningAudioSource.volume += Time.deltaTime * rotationDelta;
                 }
             }
             else
             {
                 if (turningAudioSource.volume > 0f)
                 {
-                    turningAudioSource.volume -= Time.deltaTime;
+                    turningAudioSource.volume -= Time.deltaTime * 5f;
                 }
             }
         }           
