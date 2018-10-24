@@ -2,6 +2,7 @@
 using VRTK;
 
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(DistanceEqualizer))]
 public class InteractableAudioObject : MonoBehaviour
 {
     private VRTK_InteractableObject interactableObject;
