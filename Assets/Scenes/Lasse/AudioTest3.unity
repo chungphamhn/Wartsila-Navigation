@@ -3219,10 +3219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedClip: {fileID: 0}
-  untouchedClip: {fileID: 0}
-  grabbedClip: {fileID: 0}
-  ungrabbedClip: {fileID: 0}
+  touchedClip: {fileID: 8300000, guid: 3ce168ec8ff834915959e04d8a689f23, type: 3}
+  untouchedClip: {fileID: 8300000, guid: 6f32df0e15b7c43bc85a23727fe20f57, type: 3}
+  grabbedClip: {fileID: 8300000, guid: b88c65dfdd9d94abd9854b2ade11d1fb, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: 06c7759f6e7ab420fa721c429f078843, type: 3}
   usedClip: {fileID: 0}
   unusedClip: {fileID: 0}
   enteredSnapDropZoneClip: {fileID: 0}
@@ -3718,10 +3718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedClip: {fileID: 0}
-  untouchedClip: {fileID: 0}
-  grabbedClip: {fileID: 0}
-  ungrabbedClip: {fileID: 0}
+  touchedClip: {fileID: 8300000, guid: c64066c9442e7411892415d8fb7bcd4e, type: 3}
+  untouchedClip: {fileID: 8300000, guid: 4ac662f59f26044ddbf37b84c7335314, type: 3}
+  grabbedClip: {fileID: 8300000, guid: 5d5e5f00693714345ba78cdb8c150f13, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: 6f462b302c62c4188a0ff80c31bcee09, type: 3}
   usedClip: {fileID: 0}
   unusedClip: {fileID: 0}
   enteredSnapDropZoneClip: {fileID: 0}
@@ -3986,7 +3986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0.8396226, g: 0.23366857, b: 0.23366857, a: 0}
+  touchHighlightColor: {r: 0, g: 1, b: 0.08006692, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -4111,20 +4111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedClip: {fileID: 8300000, guid: 554ae4ff7aa47c0478d95d78e6a9be6b, type: 3}
-  untouchedClip: {fileID: 8300000, guid: dde0cb3ddafcf014a8c42e805de893e8, type: 3}
-  grabbedClip: {fileID: 8300000, guid: 36f326ccef0fe5546befe26be5ba337f, type: 3}
-  ungrabbedClip: {fileID: 8300000, guid: d5aa741aac337e14398adda80505bf9c, type: 3}
-  usedClip: {fileID: 8300000, guid: 1dfef04d7ab9ced4093c828025f5bf06, type: 3}
-  unusedClip: {fileID: 8300000, guid: dd90b53139ec2fb4697f0cf3dceac679, type: 3}
-  enteredSnapDropZoneClip: {fileID: 8300000, guid: 0d18ca862d5d9b743b42348751798528,
+  touchedClip: {fileID: 8300000, guid: c64066c9442e7411892415d8fb7bcd4e, type: 3}
+  untouchedClip: {fileID: 8300000, guid: 4ac662f59f26044ddbf37b84c7335314, type: 3}
+  grabbedClip: {fileID: 8300000, guid: 5d5e5f00693714345ba78cdb8c150f13, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: 6f462b302c62c4188a0ff80c31bcee09, type: 3}
+  usedClip: {fileID: 0}
+  unusedClip: {fileID: 0}
+  enteredSnapDropZoneClip: {fileID: 8300000, guid: d8c6297077bfd4cd2addc48c03317478,
     type: 3}
-  exitedSnapDropZoneClip: {fileID: 8300000, guid: 6ad90a1b9664a154592fabedc7cef551,
+  exitedSnapDropZoneClip: {fileID: 8300000, guid: a05c61b32f4bb42f8b71285223f9c1a8,
     type: 3}
-  snappedToDropZoneClip: {fileID: 8300000, guid: 8f094810949516a41a720a40a87d29cc,
+  snappedToDropZoneClip: {fileID: 8300000, guid: 9b552db276617458fb08aaa34e0647f3,
     type: 3}
-  unsnappedFromDropZoneClip: {fileID: 8300000, guid: 4e2e74504a83fbd438147cfda37cf3d0,
-    type: 3}
+  unsnappedFromDropZoneClip: {fileID: 0}
   turningClip: {fileID: 8300000, guid: a53c98af8c8e149238e998d633098eda, type: 3}
   turnable: 0
   debugging: 0

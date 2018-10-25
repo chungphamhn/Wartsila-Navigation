@@ -129,9 +129,9 @@ public class InteractableAudioObject : MonoBehaviour
     {
         if (interactableAudioSource != null)
         {
-            interactableAudioSource.clip = clip;
+            //interactableAudioSource.clip = clip;
             interactableAudioSource.pitch = Random.Range(0.9f, 1.1f);
-            interactableAudioSource.Play();
+            interactableAudioSource.PlayOneShot(clip, Random.Range(0.8f, 1.0f));
         }
     }
 
