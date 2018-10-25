@@ -4575,7 +4575,6 @@ GameObject:
   - component: {fileID: 1436996170}
   - component: {fileID: 1436996176}
   - component: {fileID: 1436996175}
-  - component: {fileID: 1436996178}
   - component: {fileID: 1436996167}
   - component: {fileID: 1436996177}
   m_Layer: 0
@@ -4874,31 +4873,7 @@ MonoBehaviour:
   turningClip: {fileID: 0}
   turnable: 0
   debugging: 0
---- !u!169 &1436996177
-AudioLowPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436996165}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_LowpassResonanceQ: 1
-  lowpassLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.22727273
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1436996178
+--- !u!114 &1436996177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4906,12 +4881,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436996165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Script: {fileID: 11500000, guid: 952f33b9a8b954d23ae790d390607553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cutoff: 1
-  VolumeDecrease: 1
-  Debugging: 0
+  taggedCollisionClips:
+  - tag: Floor
+    collisionClips:
+    - {fileID: 8300000, guid: ec6d3584f737a4ddb9743a0ea31fa540, type: 3}
+    - {fileID: 8300000, guid: de66d10fe82aa4e6a93bcdd8ad425eef, type: 3}
+    - {fileID: 8300000, guid: e81b52cfafff44ca79fcdfa29d7a8756, type: 3}
+    - {fileID: 8300000, guid: a68fe362701a34685b25646b0cedbd5d, type: 3}
+    - {fileID: 8300000, guid: dc45aa51fe6e54e1aa2ed6863d95da4d, type: 3}
+    - {fileID: 8300000, guid: 032f046eb813f488583b23f47900b2b2, type: 3}
+    - {fileID: 8300000, guid: cc69f6b7202b84ac88ae4d080559fd42, type: 3}
+    - {fileID: 8300000, guid: c8f82bdf0757e409c933a71a109afff2, type: 3}
+    - {fileID: 8300000, guid: bc4fcfb7555f942df9eb8605cc14dd76, type: 3}
+    - {fileID: 8300000, guid: eec568200166c439fbb4e2726e62392e, type: 3}
+    - {fileID: 8300000, guid: 921f863539a8547a9b22afd20ad29302, type: 3}
+    - {fileID: 8300000, guid: 12dffb9245d1848e3aa8fe468d4f0b11, type: 3}
+    - {fileID: 8300000, guid: 6a06aa8e947dd45eca6537e1b6678e12, type: 3}
+    - {fileID: 8300000, guid: 955f011a9afb94595998303d3114d287, type: 3}
+    - {fileID: 8300000, guid: 922b49df8e8b5408190fb11cc9a33ed9, type: 3}
+    - {fileID: 8300000, guid: 8397b2eb79c684d75a4847ee103435d8, type: 3}
+    - {fileID: 8300000, guid: 22ea70122bec648e8b5ea4ce91bcfde6, type: 3}
+    - {fileID: 8300000, guid: 034a6c0f08a034819b2ec1bf37efba1e, type: 3}
+    - {fileID: 8300000, guid: e37d1b09630084fb5977efdc0c806483, type: 3}
+    - {fileID: 8300000, guid: f384b99f2c0184ff482290eefa7cc73e, type: 3}
+    - {fileID: 8300000, guid: 49cfd1d4586684cee922c8b6e144e7f6, type: 3}
+  - tag: Wall
+    collisionClips:
+    - {fileID: 8300000, guid: 94f6094dbc0df43c898e675d69bcf3f0, type: 3}
+    - {fileID: 8300000, guid: b6e43b0ed12cb47449cc951e5dce0413, type: 3}
+    - {fileID: 8300000, guid: 9137df277129e4871a435eea6ebe349e, type: 3}
+    - {fileID: 8300000, guid: f28dfabddce1f4af6988cf4033f6a06b, type: 3}
+    - {fileID: 8300000, guid: 0aa55b606af3e406e810610a865fd742, type: 3}
+    - {fileID: 8300000, guid: a37cc6efba44744a0a1256d6710ca359, type: 3}
+    - {fileID: 8300000, guid: f5f68182a63894ec7a9ed453a50e5849, type: 3}
+    - {fileID: 8300000, guid: f942ee72f47a74015a4dfadddb79c2df, type: 3}
+    - {fileID: 8300000, guid: 8a9b7da69cbca402db3a0b418a599a99, type: 3}
+    - {fileID: 8300000, guid: 7ae490d527b584e7d9a5e80d9010b668, type: 3}
+    - {fileID: 8300000, guid: c52ae7d6f5ea1441a806a7943bf88d85, type: 3}
+    - {fileID: 8300000, guid: effcd87a1bfb143f6944a4eec40bb04f, type: 3}
+    - {fileID: 8300000, guid: ebe02b0bc2cdc472eabc73cb4995c58e, type: 3}
+    - {fileID: 8300000, guid: d96a593b52b9a4c82a507cdc71ea0e2a, type: 3}
+    - {fileID: 8300000, guid: 5570dcdee697a4f84ade903adb1ee819, type: 3}
+    - {fileID: 8300000, guid: a6cff0eef8a5a4c34990272e12c2f579, type: 3}
+    - {fileID: 8300000, guid: 25ef9343da1464d58a506a1004bc1a71, type: 3}
+    - {fileID: 8300000, guid: 3adf31eeb1564462cb9e3e201419e69e, type: 3}
+  - tag: Door
+    collisionClips:
+    - {fileID: 8300000, guid: db63bcbacec4340a39406b797b43f67d, type: 3}
+    - {fileID: 8300000, guid: 380966fb22ab94c7aac0406f2009d086, type: 3}
+    - {fileID: 8300000, guid: 17398f152a83f46ed94311233f97a347, type: 3}
+    - {fileID: 8300000, guid: 3eebc593e40ad4ac9a70e1eb8ebdc98f, type: 3}
+    - {fileID: 8300000, guid: 976cade8fe59a421ea3ae938dbad69cc, type: 3}
+    - {fileID: 8300000, guid: f729aab82806c4e8bbe30cb045ca9c1d, type: 3}
+    - {fileID: 8300000, guid: 862f9cfb3185146c0bf354683d35e644, type: 3}
 --- !u!1 &1443580341
 GameObject:
   m_ObjectHideFlags: 0

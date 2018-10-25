@@ -5,18 +5,34 @@ using UnityEngine;
 [RequireComponent(typeof(InteractableAudioObject))]
 public class CollisionAudio : MonoBehaviour {
 
+    [System.Serializable]
+    struct TaggedCollisionArray {
+        public string tag;
+        public AudioClip[] collisionClips;
+    }
+
     private AudioSource interactableAudioSource;
     private AudioSource collisionAudioSource;
-    [SerializeField] AudioClip[] collisionClips;
+    [SerializeField] TaggedCollisionArray[] taggedCollisionClips;
 
-    AudioClip GetCollisionClip()
+    AudioClip GetCollisionClip(string tag)
     {
-        int n = Random.Range(1, collisionClips.Length);
+        // if tag does not exist, default to first set of clips
+        int tagNumber = 0;
+        int i = 0;
+        while (i < taggedCollisionClips.Length)
+        {
+            if (taggedCollisionClips[i].tag == tag)
+                tagNumber = i;
+            i++;
+        }
+        
+        int n = Random.Range(1, taggedCollisionClips[tagNumber].collisionClips.Length);
 
         // move picked sound to index 0 so it's not picked next time
-        AudioClip temp = collisionClips[n];
-        collisionClips[n] = collisionClips[0];
-        collisionClips[0] = temp;
+        AudioClip temp = taggedCollisionClips[tagNumber].collisionClips[n];
+        taggedCollisionClips[tagNumber].collisionClips[n] = taggedCollisionClips[tagNumber].collisionClips[0];
+        taggedCollisionClips[tagNumber].collisionClips[0] = temp;
 
         return temp;
     }
@@ -24,13 +40,13 @@ public class CollisionAudio : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         //if (collision.relativeVelocity.magnitude > 2)
-            PlayCollisionClip();
+	PlayCollisionClip(collision.gameObject.tag);
     }
 
     // plays a random collisionClip at a random volume
-    void PlayCollisionClip()
+    void PlayCollisionClip(string tag)
     {
-        AudioClip randomCollisionClip = GetCollisionClip();
+        AudioClip randomCollisionClip = GetCollisionClip(tag);
         float randomVolume = Random.Range(0.7f, 1.0f);
 
         if(randomCollisionClip)
