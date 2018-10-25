@@ -1780,6 +1780,178 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7965f19df39e64554a0a9d3cc209c308, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &510569238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1157100685930366, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!1 &510569239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1646900234046568, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!1 &510569240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1182695389835270, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!1 &510569241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1574248680677620, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!114 &510569242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569243
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569238}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &510569244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569245
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569239}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &510569246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569247
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &510569248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569249
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569241}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &512853814
 GameObject:
   m_ObjectHideFlags: 0
@@ -3652,7 +3824,7 @@ GameObject:
   - component: {fileID: 1436996170}
   - component: {fileID: 1436996176}
   - component: {fileID: 1436996175}
-  - component: {fileID: 1436996177}
+  - component: {fileID: 1436996167}
   - component: {fileID: 1436996178}
   m_Layer: 0
   m_Name: ValvePickable
@@ -3675,6 +3847,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436996167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436996165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952f33b9a8b954d23ae790d390607553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionClips:
+  - {fileID: 8300000, guid: db63bcbacec4340a39406b797b43f67d, type: 3}
+  - {fileID: 8300000, guid: 380966fb22ab94c7aac0406f2009d086, type: 3}
+  - {fileID: 8300000, guid: 17398f152a83f46ed94311233f97a347, type: 3}
+  - {fileID: 8300000, guid: 3eebc593e40ad4ac9a70e1eb8ebdc98f, type: 3}
+  - {fileID: 8300000, guid: 976cade8fe59a421ea3ae938dbad69cc, type: 3}
+  - {fileID: 8300000, guid: f729aab82806c4e8bbe30cb045ca9c1d, type: 3}
+  - {fileID: 8300000, guid: 862f9cfb3185146c0bf354683d35e644, type: 3}
 --- !u!23 &1436996168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3937,18 +4128,6 @@ MonoBehaviour:
   turningClip: {fileID: 8300000, guid: a53c98af8c8e149238e998d633098eda, type: 3}
   turnable: 0
   debugging: 0
---- !u!114 &1436996177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436996165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11239f993f88144649aef8417ccc1430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1915840346}
 --- !u!65 &1436996178
 BoxCollider:
   m_ObjectHideFlags: 0

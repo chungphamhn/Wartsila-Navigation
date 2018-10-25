@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(AudioLowPassFilter))]
 [RequireComponent(typeof(AudioSource))]
 
+// for objects with a single audio source only!
 public class DistanceEqualizer : MonoBehaviour
 {
     [SerializeField] bool Cutoff = true;
@@ -20,7 +21,7 @@ public class DistanceEqualizer : MonoBehaviour
     AudioListener AudioListener;
     AudioSource AudioSource;
 
-    void Awake ()
+    void Start ()
     {
         AudioListener = FindObjectOfType<AudioListener>();
         AudioSource = gameObject.GetComponent<AudioSource>();
@@ -29,6 +30,8 @@ public class DistanceEqualizer : MonoBehaviour
 
     void Update ()
     {
+        if (AudioListener == null)
+            AudioListener = FindObjectOfType<AudioListener>();
         float distance = Vector3.Distance(transform.position, AudioListener.transform.position);
         if (distance < AudioSource.maxDistance) 
         {   

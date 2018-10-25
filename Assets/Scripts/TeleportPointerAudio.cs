@@ -17,7 +17,7 @@ public class TeleportPointerAudio : MonoBehaviour
     [SerializeField] private bool debugging = false;
     private bool validTarget = false;
 
-    private void OnEnable()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.spatialBlend = 1.0f; // 3D
@@ -26,16 +26,28 @@ public class TeleportPointerAudio : MonoBehaviour
         pointer.SelectionButtonReleased += OnIAOSelectionButtonReleased;
         pointer.PointerStateValid += OnIAOPointerStateValid;
         pointer.PointerStateInvalid += OnIAOPointerStateInvalid;
+
+        // another audio for looping audio
+        loopingAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
+        foreach (System.Reflection.FieldInfo field in fields)
+        {
+            field.SetValue(loopingAudioSource, field.GetValue(audioSource));
+        }
+        loopingAudioSource.clip = teleportPointerLoopClip;
+        loopingAudioSource.loop = true;
     }
 
-    private void Play(AudioClip clip)
+    private void OnIAOPointerStateInvalid (object sender, DestinationMarkerEventArgs e)
     {
-        if (audioSource != null)
-        {
-            audioSource.clip = clip;
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.Play();
-        }
+        Play(teleportBadAreaClip);
+        validTarget = false;
+    }
+    
+    private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)
+    {
+        Play(teleportGoodAreaClip);
+        validTarget = true;
     }
 
     private void OnIAOSelectionButtonPressed (object sender, ControllerInteractionEventArgs e)
@@ -53,27 +65,13 @@ public class TeleportPointerAudio : MonoBehaviour
             Play(teleportCancelClip);
     }
 
-    private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)
+    private void Play(AudioClip clip)
     {
-        Play(teleportGoodAreaClip);
-        validTarget = true;
-    }
-
-    private void OnIAOPointerStateInvalid (object sender, DestinationMarkerEventArgs e)
-    {
-        Play(teleportBadAreaClip);
-        validTarget = false;
-    }
-    
-    private void Start()
-    {
-        loopingAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
-        System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
-        foreach (System.Reflection.FieldInfo field in fields)
+        if (audioSource != null)
         {
-            field.SetValue(loopingAudioSource, field.GetValue(audioSource));
+            audioSource.clip = clip;
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.Play();
         }
-        loopingAudioSource.clip = teleportPointerLoopClip;
-        loopingAudioSource.loop = true;
     }
 }

@@ -13,7 +13,7 @@ public class PointerAudio : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private bool debugging = false;
 
-    private void OnEnable()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.spatialBlend = 1.0f; // 3D
@@ -22,16 +22,6 @@ public class PointerAudio : MonoBehaviour
         pointer.ActivationButtonReleased += OnIAOActivationButtonReleased;
         pointer.PointerStateValid += OnIAOPointerStateValid;
         pointer.PointerStateInvalid += OnIAOPointerStateInvalid;
-    }
-
-    private void Play(AudioClip clip)
-    {
-        if (audioSource != null)
-        {
-            audioSource.clip = clip;
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.Play();
-        }
     }
 
     private void OnIAOActivationButtonPressed (object sender, ControllerInteractionEventArgs e)
@@ -44,14 +34,23 @@ public class PointerAudio : MonoBehaviour
         Play(activationButtonReleasedClip);
     }
 
-    private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)
-    {
-        Play(pointerStateValidClip);
-    }
-
     private void OnIAOPointerStateInvalid (object sender, DestinationMarkerEventArgs e)
     {
         Play(pointerStateInvalidClip);
     }
 
+    private void OnIAOPointerStateValid (object sender, DestinationMarkerEventArgs e)
+    {
+        Play(pointerStateValidClip);
+    }
+
+    private void Play(AudioClip clip)
+    {
+        if (audioSource != null)
+        {
+            audioSource.clip = clip;
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.Play();
+        }
+    }
 }
