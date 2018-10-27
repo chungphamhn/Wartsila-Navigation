@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour {
 
     private float timer;
     public Text clock;
-    private bool timerStarted;
+    public static bool timerStarted;
     private 
 
 	// Use this for initialization
