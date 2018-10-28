@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using VRTK;
 
 [RequireComponent(typeof(AudioSource))]
@@ -16,17 +17,17 @@ public class InteractableAudioObject : MonoBehaviour
     [SerializeField] private AudioClip exitedSnapDropZoneClip;
     [SerializeField] private AudioClip snappedToDropZoneClip;
     [SerializeField] private AudioClip unsnappedFromDropZoneClip;
-    private AudioSource audioSource;
+    private AudioSource interactableAudioSource;
     private AudioSource turningAudioSource;
     private Quaternion previousRotation;
     [SerializeField] private AudioClip turningClip; // should be a loop
     [SerializeField] private bool turnable = false;
     [SerializeField] private bool debugging = false;
 
-    private void OnEnable()
+    private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.spatialBlend = 1.0f; // 3D
+        interactableAudioSource = GetComponent<AudioSource>();
+        interactableAudioSource.spatialBlend = 1.0f; // 3D
         interactableObject = GetComponent<VRTK_InteractableObject>();
         interactableObject.InteractableObjectTouched += OnIAOTouched;
         interactableObject.InteractableObjectUntouched += OnIAOUntouched;
@@ -38,58 +39,38 @@ public class InteractableAudioObject : MonoBehaviour
         interactableObject.InteractableObjectExitedSnapDropZone += OnIAOExitedSnapDropZone;
         interactableObject.InteractableObjectSnappedToDropZone += OnIAOSnappedToDropZone;
         interactableObject.InteractableObjectUnsnappedFromDropZone += OnIAOUnsnappedFromDropZone;
-    }
 
-    public void SetTurningAudioActive(bool active = true)
-    {
-        turnable = active; 
-        if (!turnable)
+        if (turnable)
         {
-            turningAudioSource.Stop();
+            // another audio source for looping turning audio for valves
+            turningAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+            System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
+            foreach (System.Reflection.FieldInfo field in fields)
+            {
+                field.SetValue(turningAudioSource, field.GetValue(interactableAudioSource));
+            }
+            turningAudioSource.clip = turningClip;
             turningAudioSource.volume = 0f;
+            turningAudioSource.loop = true;
+            turningAudioSource.Play();
+
+            // for keeping track of rotation changes
+            previousRotation = transform.rotation;
         }
     }
-    
-    private void Play(AudioClip clip)
+
+    private IEnumerator _GetInteractableAudioSource ()
     {
-        if (audioSource != null)
+        while ( interactableAudioSource == null)
         {
-            audioSource.clip = clip;
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.Play();
+            yield return null;
         }
     }
 
-    private void OnIAOTouched (object sender, InteractableObjectEventArgs e)
+    public AudioSource GetInteractableAudioSource()
     {
-        Play(touchedClip);
-    }
-
-    private void OnIAOUntouched (object sender, InteractableObjectEventArgs e)
-    {
-        Play(untouchedClip);
-    }
-
-    private void OnIAOGrabbed (object sender, InteractableObjectEventArgs e)
-    {
-        controllerReference = VRTK_ControllerReference.GetControllerReference(e.interactingObject);
-        Play(grabbedClip);
-    }
-        
-    private void OnIAOUngrabbed (object sender, InteractableObjectEventArgs e)
-    {
-        Play(ungrabbedClip);
-        controllerReference = null;
-    }
-
-    private void OnIAOUsed (object sender, InteractableObjectEventArgs e)
-    {
-        Play(usedClip);
-    }
-
-    private void OnIAOUnused (object sender, InteractableObjectEventArgs e)
-    {
-        Play(unusedClip);
+        //StartCoroutine(_GetInteractableAudioSource());
+        return interactableAudioSource;
     }
 
     private void OnIAOEnteredSnapDropZone (object sender, InteractableObjectEventArgs e)
@@ -102,9 +83,26 @@ public class InteractableAudioObject : MonoBehaviour
         Play(exitedSnapDropZoneClip);
     }
 
+    private void OnIAOGrabbed (object sender, InteractableObjectEventArgs e)
+    {
+        controllerReference = VRTK_ControllerReference.GetControllerReference(e.interactingObject);
+        Play(grabbedClip);
+    }
+        
     private void OnIAOSnappedToDropZone (object sender, InteractableObjectEventArgs e)
     {
         Play(snappedToDropZoneClip);
+    }
+
+    private void OnIAOTouched (object sender, InteractableObjectEventArgs e)
+    {
+        Play(touchedClip);
+    }
+
+    private void OnIAOUngrabbed (object sender, InteractableObjectEventArgs e)
+    {
+        Play(ungrabbedClip);
+        controllerReference = null;
     }
 
     private void OnIAOUnsnappedFromDropZone (object sender, InteractableObjectEventArgs e)
@@ -112,27 +110,41 @@ public class InteractableAudioObject : MonoBehaviour
         Play(unsnappedFromDropZoneClip);
     }
 
-    private void Start()
+    private void OnIAOUntouched (object sender, InteractableObjectEventArgs e)
     {
-        if (turnable)
-        {
-            // another audio source for looping turning audio for valves
-            turningAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
-            System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
-            foreach (System.Reflection.FieldInfo field in fields)
-            {
-                field.SetValue(turningAudioSource, field.GetValue(audioSource));
-            }
-            turningAudioSource.clip = turningClip;
-            turningAudioSource.volume = 0f;
-            turningAudioSource.loop = true;
-            turningAudioSource.Play();
+        Play(untouchedClip);
+    }
 
-            // for keeping track of rotation changes
-            previousRotation = transform.rotation;
+    private void OnIAOUnused (object sender, InteractableObjectEventArgs e)
+    {
+        Play(unusedClip);
+    }
+
+    private void OnIAOUsed (object sender, InteractableObjectEventArgs e)
+    {
+        Play(usedClip);
+    }
+
+    private void Play(AudioClip clip)
+    {
+        if (interactableAudioSource != null)
+        {
+            //interactableAudioSource.clip = clip;
+            interactableAudioSource.pitch = Random.Range(0.9f, 1.1f);
+            interactableAudioSource.PlayOneShot(clip, Random.Range(0.8f, 1.0f));
         }
     }
 
+    public void SetTurningAudioActive(bool active = true)
+    {
+        turnable = active; 
+        if (!turnable)
+        {
+            turningAudioSource.Stop();
+            turningAudioSource.volume = 0f;
+        }
+    }
+    
     private void Update()
     {
         // fade in turning clip if object (e.g. valve handle) is being turned

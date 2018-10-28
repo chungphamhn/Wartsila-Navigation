@@ -1780,6 +1780,178 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7965f19df39e64554a0a9d3cc209c308, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &510569238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1157100685930366, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!1 &510569239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1646900234046568, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!1 &510569240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1182695389835270, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!1 &510569241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1574248680677620, guid: 7965f19df39e64554a0a9d3cc209c308,
+    type: 2}
+  m_PrefabInternal: {fileID: 510569237}
+--- !u!114 &510569242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569243
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569238}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &510569244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569245
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569239}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &510569246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569247
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &510569248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b80dd33ceb40ac895d1cee68f0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutoff: 1
+  VolumeDecrease: 1
+  Debugging: 0
+--- !u!169 &510569249
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510569241}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &512853814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,9 +3120,10 @@ AudioSource:
   m_GameObject: {fileID: 1255175493}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243314884104848260, guid: b2e3ffc1106d349bfb471d2b6c91d158,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2995,7 +3168,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3046,10 +3219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedClip: {fileID: 0}
-  untouchedClip: {fileID: 0}
-  grabbedClip: {fileID: 0}
-  ungrabbedClip: {fileID: 0}
+  touchedClip: {fileID: 8300000, guid: 3ce168ec8ff834915959e04d8a689f23, type: 3}
+  untouchedClip: {fileID: 8300000, guid: 6f32df0e15b7c43bc85a23727fe20f57, type: 3}
+  grabbedClip: {fileID: 8300000, guid: b88c65dfdd9d94abd9854b2ade11d1fb, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: 06c7759f6e7ab420fa721c429f078843, type: 3}
   usedClip: {fileID: 0}
   unusedClip: {fileID: 0}
   enteredSnapDropZoneClip: {fileID: 0}
@@ -3446,9 +3619,10 @@ AudioSource:
   m_GameObject: {fileID: 1396444738}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243314884104848260, guid: b2e3ffc1106d349bfb471d2b6c91d158,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3493,7 +3667,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3544,10 +3718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedClip: {fileID: 0}
-  untouchedClip: {fileID: 0}
-  grabbedClip: {fileID: 0}
-  ungrabbedClip: {fileID: 0}
+  touchedClip: {fileID: 8300000, guid: c64066c9442e7411892415d8fb7bcd4e, type: 3}
+  untouchedClip: {fileID: 8300000, guid: 4ac662f59f26044ddbf37b84c7335314, type: 3}
+  grabbedClip: {fileID: 8300000, guid: 5d5e5f00693714345ba78cdb8c150f13, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: 6f462b302c62c4188a0ff80c31bcee09, type: 3}
   usedClip: {fileID: 0}
   unusedClip: {fileID: 0}
   enteredSnapDropZoneClip: {fileID: 0}
@@ -3650,7 +3824,7 @@ GameObject:
   - component: {fileID: 1436996170}
   - component: {fileID: 1436996176}
   - component: {fileID: 1436996175}
-  - component: {fileID: 1436996177}
+  - component: {fileID: 1436996167}
   - component: {fileID: 1436996178}
   m_Layer: 0
   m_Name: ValvePickable
@@ -3673,6 +3847,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436996167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436996165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952f33b9a8b954d23ae790d390607553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionClips:
+  - {fileID: 8300000, guid: db63bcbacec4340a39406b797b43f67d, type: 3}
+  - {fileID: 8300000, guid: 380966fb22ab94c7aac0406f2009d086, type: 3}
+  - {fileID: 8300000, guid: 17398f152a83f46ed94311233f97a347, type: 3}
+  - {fileID: 8300000, guid: 3eebc593e40ad4ac9a70e1eb8ebdc98f, type: 3}
+  - {fileID: 8300000, guid: 976cade8fe59a421ea3ae938dbad69cc, type: 3}
+  - {fileID: 8300000, guid: f729aab82806c4e8bbe30cb045ca9c1d, type: 3}
+  - {fileID: 8300000, guid: 862f9cfb3185146c0bf354683d35e644, type: 3}
 --- !u!23 &1436996168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3793,7 +3986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0.8396226, g: 0.23366857, b: 0.23366857, a: 0}
+  touchHighlightColor: {r: 0, g: 1, b: 0.08006692, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -3819,9 +4012,10 @@ AudioSource:
   m_GameObject: {fileID: 1436996165}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243314884104848260, guid: b2e3ffc1106d349bfb471d2b6c91d158,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3866,7 +4060,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3917,35 +4111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9717bba240f145aa98b9aacd7da6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedClip: {fileID: 8300000, guid: 554ae4ff7aa47c0478d95d78e6a9be6b, type: 3}
-  untouchedClip: {fileID: 8300000, guid: dde0cb3ddafcf014a8c42e805de893e8, type: 3}
-  grabbedClip: {fileID: 8300000, guid: 36f326ccef0fe5546befe26be5ba337f, type: 3}
-  ungrabbedClip: {fileID: 8300000, guid: d5aa741aac337e14398adda80505bf9c, type: 3}
-  usedClip: {fileID: 8300000, guid: 1dfef04d7ab9ced4093c828025f5bf06, type: 3}
-  unusedClip: {fileID: 8300000, guid: dd90b53139ec2fb4697f0cf3dceac679, type: 3}
-  enteredSnapDropZoneClip: {fileID: 8300000, guid: 0d18ca862d5d9b743b42348751798528,
+  touchedClip: {fileID: 8300000, guid: c64066c9442e7411892415d8fb7bcd4e, type: 3}
+  untouchedClip: {fileID: 8300000, guid: 4ac662f59f26044ddbf37b84c7335314, type: 3}
+  grabbedClip: {fileID: 8300000, guid: 5d5e5f00693714345ba78cdb8c150f13, type: 3}
+  ungrabbedClip: {fileID: 8300000, guid: 6f462b302c62c4188a0ff80c31bcee09, type: 3}
+  usedClip: {fileID: 0}
+  unusedClip: {fileID: 0}
+  enteredSnapDropZoneClip: {fileID: 8300000, guid: d8c6297077bfd4cd2addc48c03317478,
     type: 3}
-  exitedSnapDropZoneClip: {fileID: 8300000, guid: 6ad90a1b9664a154592fabedc7cef551,
+  exitedSnapDropZoneClip: {fileID: 8300000, guid: a05c61b32f4bb42f8b71285223f9c1a8,
     type: 3}
-  snappedToDropZoneClip: {fileID: 8300000, guid: 8f094810949516a41a720a40a87d29cc,
+  snappedToDropZoneClip: {fileID: 8300000, guid: 9b552db276617458fb08aaa34e0647f3,
     type: 3}
-  unsnappedFromDropZoneClip: {fileID: 8300000, guid: 37b6eb5cae1aaba4086f32bccf0cb47f,
-    type: 3}
+  unsnappedFromDropZoneClip: {fileID: 0}
   turningClip: {fileID: 8300000, guid: a53c98af8c8e149238e998d633098eda, type: 3}
   turnable: 0
   debugging: 0
---- !u!114 &1436996177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1436996165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11239f993f88144649aef8417ccc1430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1915840346}
 --- !u!65 &1436996178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4940,6 +5121,7 @@ MonoBehaviour:
     type: 3}
   teleportPointerLoopClip: {fileID: 8300000, guid: 47b5e90896f0e004c85bebd26e6057e2,
     type: 3}
+  teleportCancelClip: {fileID: 8300000, guid: 4f64d18dbcfcf429ea08db1ac8cdee03, type: 3}
   teleportGoClip: {fileID: 8300000, guid: e9befd794befe7540ad040be41dba757, type: 3}
   teleportGoodAreaClip: {fileID: 8300000, guid: 4e2e74504a83fbd438147cfda37cf3d0,
     type: 3}
@@ -5792,17 +5974,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e1bebfbda804a79a4252d218cffa84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationButtonPressedClip: {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba,
+  activationButtonPressedClip: {fileID: 8300000, guid: 7064e028da8664a27b48e6a9023b5840,
     type: 3}
-  activationButtonReleasedClip: {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277,
+  activationButtonReleasedClip: {fileID: 8300000, guid: 17d4b898fd2fa476b8a37cf6022470a4,
     type: 3}
-  selectionButtonPressedClip: {fileID: 8300000, guid: efee776e88902a74684c56ce2962678f,
+  pointerStateValidClip: {fileID: 8300000, guid: 5acc114ed27394343befb1021ebf1ebf,
     type: 3}
-  selectionButtonReleasedClip: {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681,
-    type: 3}
-  pointerStateValidClip: {fileID: 8300000, guid: 526033aedfcd8fa4893bd857ca331979,
-    type: 3}
-  pointerStateInvalidClip: {fileID: 8300000, guid: e3148a98a2496e64cb8712177bbcde71,
+  pointerStateInvalidClip: {fileID: 8300000, guid: f97c8aee38f7544069a0d39425b793c3,
     type: 3}
   debugging: 0
 --- !u!114 &1850751318

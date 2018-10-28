@@ -19,11 +19,8 @@ public class OpenDoor : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         
-        Debug.Log(valve.transform.localRotation.eulerAngles.x >= 100);
-
         if(valve.transform.localRotation.eulerAngles.x >= 100)
-        {
-            
+        {            
             //can open door
             door.isKinematic = false;
 
