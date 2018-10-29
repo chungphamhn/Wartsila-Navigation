@@ -31,6 +31,13 @@ namespace VRTK
 
         protected virtual void OnEnable()
         {
+            StartCoroutine(coroutineA());
+        }
+
+        IEnumerator coroutineA()
+        {
+            // wait for 1 second
+            yield return new WaitForSeconds(1.0f);
             SetupCanvas();
         }
 
