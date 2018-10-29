@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5551,8 +5551,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: -19.0975, y: 1.233, z: -14.81}
   m_UseSpring: 0
   m_Spring:
-    spring: 1.09
-    damper: 0.2
+    spring: 0
+    damper: 0
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -5661,7 +5661,7 @@ BoxCollider:
   m_GameObject: {fileID: 1255175493}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.98, z: 1.13}
   m_Center: {x: 0.06, y: 0, z: 0}
@@ -5730,7 +5730,7 @@ MeshCollider:
   m_GameObject: {fileID: 1255175493}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14

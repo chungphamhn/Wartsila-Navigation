@@ -16,9 +16,12 @@ public class ValveSnap : MonoBehaviour {
     private void EnableRotatableValve(object sender, SnapDropZoneEventArgs e)
     {
 	GameObject pickableValve = dropZone.GetCurrentSnappedObject();
-	pickableValve.GetComponent<Renderer>().enabled = false;
+	//pickableValve.GetComponent<Renderer>().enabled = false;
 	pickableValve.GetComponent<Collider>().enabled = false;
-	Component[] renderers = GetComponentsInChildren<Renderer>();
+        Component[] valveRenderers = pickableValve.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in valveRenderers)
+            renderer.enabled = false;
+        Component[] renderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers)
             renderer.enabled = false;
 	this.GetComponent<Collider>().enabled = false;
