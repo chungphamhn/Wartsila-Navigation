@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 [RequireComponent(typeof(InteractableAudioObject))]
@@ -57,12 +57,25 @@ public class CollisionAudio : MonoBehaviour {
 
     void Start ()
     {
-        // for copying the field values of the main audio source
+        // main audio source
         interactableAudioSource = GetComponent<InteractableAudioObject>().GetInteractableAudioSource();
 
         // audio source for collisions  
         collisionAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
-        System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
+
+        BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Default | BindingFlags.DeclaredOnly;
+        System.Reflection.PropertyInfo[] properties = typeof(AudioSource).GetProperties(flags);
+        foreach (System.Reflection.PropertyInfo property in properties)
+        {
+            if (property.CanWrite) {
+                try
+                {
+                    property.SetValue(collisionAudioSource, property.GetValue(interactableAudioSource, null), null);
+                }
+                catch { }
+            }
+        }
+        System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields(flags);
         foreach (System.Reflection.FieldInfo field in fields)
         {
             field.SetValue(collisionAudioSource, field.GetValue(interactableAudioSource));

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Reflection;
 using UnityEngine;
 using VRTK;
 
@@ -44,11 +45,23 @@ public class InteractableAudioObject : MonoBehaviour
         {
             // another audio source for looping turning audio for valves
             turningAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
-            System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields();
-            foreach (System.Reflection.FieldInfo field in fields)
-            {
-                field.SetValue(turningAudioSource, field.GetValue(interactableAudioSource));
-            }
+	    BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Default | BindingFlags.DeclaredOnly;
+	    System.Reflection.PropertyInfo[] properties = typeof(AudioSource).GetProperties(flags);
+	    foreach (System.Reflection.PropertyInfo property in properties)
+	    {
+		if (property.CanWrite) {
+		    try
+		    {
+			property.SetValue(turningAudioSource, property.GetValue(interactableAudioSource, null), null);
+		    }
+		    catch { }
+		}
+	    }
+	    System.Reflection.FieldInfo[] fields = typeof(AudioSource).GetFields(flags);
+	    foreach (System.Reflection.FieldInfo field in fields)
+	    {
+		field.SetValue(turningAudioSource, field.GetValue(interactableAudioSource));
+	    }   
             turningAudioSource.clip = turningClip;
             turningAudioSource.volume = 0f;
             turningAudioSource.loop = true;
