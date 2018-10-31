@@ -7,6 +7,7 @@ public class OilLeakCheck : MonoBehaviour {
     public GameObject[] oilLeaks;
     public static bool[] leaks = new bool[4];
     private int rnd;
+    public static bool initializing = true; // for not starting leak audio until done randomizing
 
     // Use this for initialization
     void Start () {
@@ -21,6 +22,7 @@ public class OilLeakCheck : MonoBehaviour {
             leaks[i] = true;
             Debug.Log(leaks);
         }
+	initializing = false;
 	}
 	
 	// Update is called once per frame

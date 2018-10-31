@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using VRTK;
 
+[RequireComponent(typeof(ButtonAudio))]
 public class button1 : MonoBehaviour {
 
     public Button btn;
@@ -20,14 +21,19 @@ public class button1 : MonoBehaviour {
 
     public void OnClick()
     {
+	ButtonAudio btnAudio = btn.GetComponent<ButtonAudio>();
         Debug.Log(OilLeakCheck.leaks[0]);
         if (OilLeakCheck.leaks[0])
         {
             btn.image.color = Color.green;
+	    if (btnAudio != null)
+		btnAudio.PlayCorrectClip();
 
         } else
         {
             btn.image.color = Color.red;
+	    if (btnAudio != null)
+		btnAudio.PlayInorrectClip();
         }
         
     }
