@@ -7,6 +7,7 @@ public class OpenDoor : MonoBehaviour {
     public GameObject valve;
     private Rigidbody door;
     public float rotation;
+    public static bool doorOpened;
 
 
     // Use this for initialization
@@ -26,7 +27,9 @@ public class OpenDoor : MonoBehaviour {
 
             // lock valve and prevent further valve rotation audio
             valve.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
-            valve.GetComponent<InteractableAudioObject>().SetTurningAudioActive(false);            
+            valve.GetComponent<InteractableAudioObject>().SetTurningAudioActive(false);
+            doorOpened = true;
+            Debug.Log("door open");
         }                
     }
 }

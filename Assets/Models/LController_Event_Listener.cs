@@ -20,5 +20,10 @@ public class LController_Event_Listener : MonoBehaviour {
     private void LController_Event_Listener_TouchpadPressed(object sender, ControllerInteractionEventArgs e)
     {
         mainMenuCanvas.SetActive(!mainMenuCanvas.activeSelf);
+        mainMenuCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        for(int i = 1; i < mainMenuCanvas.transform.childCount; i++) {
+            mainMenuCanvas.transform.GetChild(i).gameObject.SetActive(false);
+        }
+        
     }
 }
