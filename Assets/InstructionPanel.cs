@@ -15,7 +15,6 @@ public class InstructionPanel : MonoBehaviour {
             Instruction.SetActive(true);
         }
         else {
-            Debug.Log("here");
             Instruction.SetActive(false);
         }
     }

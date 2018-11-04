@@ -29,7 +29,6 @@ public class OpenDoor : MonoBehaviour {
             valve.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
             valve.GetComponent<InteractableAudioObject>().SetTurningAudioActive(false);
             doorOpened = true;
-            Debug.Log("door open");
         }                
     }
 }

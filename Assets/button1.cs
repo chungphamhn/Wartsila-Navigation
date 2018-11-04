@@ -8,6 +8,7 @@ using VRTK;
 public class button1 : MonoBehaviour {
 
     public Button btn;
+    public bool click;
 
     // Use this for initialization
     void Start () {
@@ -22,6 +23,7 @@ public class button1 : MonoBehaviour {
     public void OnClick()
     {
 	ButtonAudio btnAudio = btn.GetComponent<ButtonAudio>();
+        click = true;
         Debug.Log(OilLeakCheck.leaks[0]);
         if (OilLeakCheck.leaks[0])
         {

@@ -9,19 +9,13 @@ public class button4 : MonoBehaviour {
 
     public Button btn;
 
-    // Use this for initialization
-    void Start () {
-        //btn = gameObject.GetComponent<Button>();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool click;
+
 
     public void OnClick()
     {
 	ButtonAudio btnAudio = btn.GetComponent<ButtonAudio>();
+        click = true;
         Debug.Log(OilLeakCheck.leaks[3]);
         if (OilLeakCheck.leaks[3])
         {

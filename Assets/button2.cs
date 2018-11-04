@@ -9,6 +9,8 @@ public class button2 : MonoBehaviour {
 
     public Button btn;
 
+    public bool click;
+
     // Use this for initialization
     void Start () {
         //btn = gameObject.GetComponent<Button>();
@@ -22,6 +24,7 @@ public class button2 : MonoBehaviour {
     public void OnClick()
     {
 	ButtonAudio btnAudio = btn.GetComponent<ButtonAudio>();
+        click = true;
         Debug.Log(OilLeakCheck.leaks[1]);
         if (OilLeakCheck.leaks[1])
         {
